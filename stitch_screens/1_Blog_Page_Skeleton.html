@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog - Senior Full-Stack &amp; AI Engineer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0677f9",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1823",
+                        "notion-bg": "#ffffff",
+                        "notion-sidebar": "#f7f7f5",
+                        "notion-dark-bg": "#191919",
+                        "notion-dark-sidebar": "#202020"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-notion-bg dark:bg-notion-dark-bg font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-notion-bg/80 dark:bg-notion-dark-bg/80 backdrop-blur-md">
+<div class="max-w-[1400px] mx-auto px-6 h-14 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-7 text-primary flex items-center justify-center bg-primary/10 rounded-md">
+<span class="material-symbols-outlined" style="font-size: 20px;">code</span>
+</div>
+<h2 class="text-base font-semibold tracking-tight text-slate-900 dark:text-white">John Doe</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" href="#">Projects</a>
+<a class="text-sm font-medium text-slate-900 dark:text-white relative" href="#">
+                Blog
+            </a>
+<a class="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" href="#">Contact</a>
+</nav>
+<div class="hidden sm:flex items-center gap-3">
+<button class="flex items-center justify-center h-8 px-3 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium transition-colors dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700">
+                Resume
+            </button>
+<button class="flex items-center justify-center h-8 px-3 rounded bg-primary hover:bg-primary/90 text-white text-xs font-medium transition-colors shadow-sm shadow-primary/20">
+                Hire Me
+            </button>
+</div>
+<button class="md:hidden p-2 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<div class="flex-1 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row">
+<aside class="w-full md:w-64 lg:w-72 shrink-0 border-r border-slate-200 dark:border-slate-800 bg-notion-sidebar/50 dark:bg-notion-dark-sidebar/30 md:min-h-[calc(100vh-3.5rem)] py-8 px-4 md:sticky md:top-14">
+<div class="mb-6 px-2">
+<h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Explorer</h3>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-2 text-slate-400">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</span>
+<input class="w-full py-1.5 pl-8 pr-3 text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-slate-400 dark:placeholder:text-slate-600" placeholder="Search posts..." type="text"/>
+</div>
+</div>
+<nav class="space-y-0.5">
+<a class="flex items-center gap-2 px-2 py-1.5 rounded-md bg-slate-200/50 dark:bg-slate-800 text-slate-900 dark:text-white font-medium text-sm group" href="#">
+<span class="material-symbols-outlined text-[18px] text-slate-500 group-hover:text-primary transition-colors">article</span>
+                All Posts
+            </a>
+<div class="pt-2">
+<details class="group" open="">
+<summary class="flex items-center gap-2 px-2 py-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer text-slate-700 dark:text-slate-300 text-sm select-none list-none">
+<span class="material-symbols-outlined text-[18px] text-slate-400 group-open:rotate-90 transition-transform">arrow_right</span>
+<span class="material-symbols-outlined text-[18px] text-slate-500">folder</span>
+                        Backend Engineering
+                    </summary>
+<div class="pl-9 pt-0.5 space-y-0.5">
+<a class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px] text-slate-400">tag</span>
+                            FastAPI
+                        </a>
+<a class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px] text-slate-400">tag</span>
+                            Python Architecture
+                        </a>
+</div>
+</details>
+</div>
+<div>
+<details class="group" open="">
+<summary class="flex items-center gap-2 px-2 py-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer text-slate-700 dark:text-slate-300 text-sm select-none list-none">
+<span class="material-symbols-outlined text-[18px] text-slate-400 group-open:rotate-90 transition-transform">arrow_right</span>
+<span class="material-symbols-outlined text-[18px] text-slate-500">folder</span>
+                        AI &amp; Agents
+                    </summary>
+<div class="pl-9 pt-0.5 space-y-0.5">
+<a class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px] text-slate-400">tag</span>
+                            LLM Integration
+                        </a>
+<a class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px] text-slate-400">tag</span>
+                            Prompt Engineering
+                        </a>
+</div>
+</details>
+</div>
+<div>
+<details class="group">
+<summary class="flex items-center gap-2 px-2 py-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer text-slate-700 dark:text-slate-300 text-sm select-none list-none">
+<span class="material-symbols-outlined text-[18px] text-slate-400 group-open:rotate-90 transition-transform">arrow_right</span>
+<span class="material-symbols-outlined text-[18px] text-slate-500">folder</span>
+                        Frontend
+                    </summary>
+<div class="pl-9 pt-0.5 space-y-0.5">
+<a class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px] text-slate-400">tag</span>
+                            React Ecosystem
+                        </a>
+<a class="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px] text-slate-400">tag</span>
+                            Performance
+                        </a>
+</div>
+</details>
+</div>
+</nav>
+<div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+<div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-1">Weekly Digest</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Get my latest engineering notes delivered to your inbox.</p>
+<form class="flex gap-2">
+<input class="w-full h-8 px-2 text-xs border border-slate-200 dark:border-slate-700 rounded bg-white dark:bg-slate-900 focus:ring-1 focus:ring-primary" placeholder="Email" type="email"/>
+<button class="h-8 px-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded text-xs font-bold hover:opacity-90">Join</button>
+</form>
+</div>
+</div>
+</aside>
+<main class="flex-1 w-full px-6 md:px-12 py-12 max-w-4xl">
+<div class="mb-8 flex items-center text-sm text-slate-500 dark:text-slate-400">
+<span class="hover:text-primary cursor-pointer">Blog</span>
+<span class="mx-2">/</span>
+<span class="text-slate-900 dark:text-white font-medium">All Posts</span>
+</div>
+<div class="mb-12 border-b border-slate-100 dark:border-slate-800 pb-8">
+<div class="flex items-start gap-4 mb-4">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[32px]">article</span>
+</div>
+<div>
+<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">All Posts</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Explorations in software engineering, system architecture, and AI. A collection of technical deep dives and field notes.
+                    </p>
+</div>
+</div>
+</div>
+<div class="space-y-10">
+<article class="group relative flex flex-col gap-3">
+<div class="flex items-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">
+<span class="flex items-center gap-1 px-2 py-0.5 rounded bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800">
+<span class="material-symbols-outlined text-[14px]">neurology</span>
+                        LLM Integration
+                    </span>
+<span>•</span>
+<time datetime="2023-10-24">Oct 24, 2023</time>
+<span>•</span>
+<span>5 min read</span>
+</div>
+<h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+<a class="focus:outline-none" href="#">
+<span class="absolute inset-0"></span>
+                        Scaling Large Language Models: Lessons from Production
+                    </a>
+</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2">
+                    Deploying LLMs is easy; scaling them is hard. In this post, I break down the challenges of inference optimization, memory management with vLLM, and cost-effective serving strategies we implemented for a high-traffic chatbot.
+                </p>
+<div class="flex items-center text-sm font-medium text-primary mt-1 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0 duration-300">
+                    Read article <span class="material-symbols-outlined ml-1 text-[16px]">arrow_forward</span>
+</div>
+</article>
+<article class="group relative flex flex-col gap-3 pt-8 border-t border-dashed border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">
+<span class="flex items-center gap-1 px-2 py-0.5 rounded bg-orange-50 text-orange-600 dark:bg-orange-900/30 dark:text-orange-300 border border-orange-100 dark:border-orange-800">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+                        FastAPI
+                    </span>
+<span>•</span>
+<time datetime="2023-09-12">Sep 12, 2023</time>
+<span>•</span>
+<span>8 min read</span>
+</div>
+<h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+<a class="focus:outline-none" href="#">
+<span class="absolute inset-0"></span>
+                        Asynchronous Patterns in Python with FastAPI
+                    </a>
+</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2">
+                    Moving beyond basic async/await. We explore advanced concurrency patterns in Python, how to handle blocking IO effectively without stalling the event loop, and structuring a FastAPI project for maximum throughput.
+                </p>
+<div class="flex items-center text-sm font-medium text-primary mt-1 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0 duration-300">
+                    Read article <span class="material-symbols-outlined ml-1 text-[16px]">arrow_forward</span>
+</div>
+</article>
+<article class="group relative flex flex-col gap-3 pt-8 border-t border-dashed border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">
+<span class="flex items-center gap-1 px-2 py-0.5 rounded bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-100 dark:border-purple-800">
+<span class="material-symbols-outlined text-[14px]">architecture</span>
+                        System Design
+                    </span>
+<span>•</span>
+<time datetime="2023-08-05">Aug 05, 2023</time>
+<span>•</span>
+<span>12 min read</span>
+</div>
+<h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+<a class="focus:outline-none" href="#">
+<span class="absolute inset-0"></span>
+                        The Evolution of Data Pipelines: From Batch to Real-time
+                    </a>
+</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2">
+                    A deep dive into modern data architecture patterns. Comparing Lambda vs Kappa architectures and choosing the right tool for the job when latency matters more than throughput.
+                </p>
+<div class="flex items-center text-sm font-medium text-primary mt-1 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0 duration-300">
+                    Read article <span class="material-symbols-outlined ml-1 text-[16px]">arrow_forward</span>
+</div>
+</article>
+<article class="group relative flex flex-col gap-3 pt-8 border-t border-dashed border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">
+<span class="flex items-center gap-1 px-2 py-0.5 rounded bg-cyan-50 text-cyan-600 dark:bg-cyan-900/30 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-800">
+<span class="material-symbols-outlined text-[14px]">code</span>
+                        React Ecosystem
+                    </span>
+<span>•</span>
+<time datetime="2023-07-15">Jul 15, 2023</time>
+<span>•</span>
+<span>6 min read</span>
+</div>
+<h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+<a class="focus:outline-none" href="#">
+<span class="absolute inset-0"></span>
+                        Mastering React Server Components
+                    </a>
+</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2">
+                    Server Components are changing how we think about React applications. Here's a practical guide on when to use them, how they impact bundle size, and the trade-offs involved in mixing client and server components.
+                </p>
+<div class="flex items-center text-sm font-medium text-primary mt-1 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0 duration-300">
+                    Read article <span class="material-symbols-outlined ml-1 text-[16px]">arrow_forward</span>
+</div>
+</article>
+</div>
+<div class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center">
+<button class="flex items-center gap-1 text-sm font-medium text-slate-400 cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                Previous
+            </button>
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 flex items-center justify-center rounded-md bg-slate-900 text-white text-sm font-medium dark:bg-white dark:text-slate-900">1</span>
+<span class="w-8 h-8 flex items-center justify-center rounded-md text-slate-600 hover:bg-slate-100 text-sm font-medium dark:text-slate-400 dark:hover:bg-slate-800 cursor-pointer">2</span>
+<span class="w-8 h-8 flex items-center justify-center rounded-md text-slate-600 hover:bg-slate-100 text-sm font-medium dark:text-slate-400 dark:hover:bg-slate-800 cursor-pointer">3</span>
+</div>
+<button class="flex items-center gap-1 text-sm font-medium text-slate-900 dark:text-white hover:text-primary transition-colors">
+                Next
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</main>
+</div>
+<footer class="mt-auto py-8 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-notion-dark-bg">
+<div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="size-6 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-size: 20px;">code</span>
+</div>
+<span class="text-sm font-semibold text-slate-900 dark:text-white">© 2024 John Doe</span>
+</div>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#">
+<span class="sr-only">Twitter</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+</svg>
+</a>
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#">
+<span class="sr-only">GitHub</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#">
+<span class="sr-only">LinkedIn</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+</svg>
+</a>
+</div>
+</div>
+</footer>
+
+</body></html>

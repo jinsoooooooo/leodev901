@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leo - Senior Backend &amp; AI Agent Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0677f9",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0f1823",
+                        "accent-blue": "#007AFF",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-[#FFFFFF] text-[#111111] antialiased;
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cbd5e1;
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/80 backdrop-blur-md">
+<div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 lg:px-8">
+<a class="flex items-center gap-2 group" href="/">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xl">terminal</span>
+</div>
+<span class="text-lg font-bold tracking-tight text-slate-900">Leo</span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-slate-900 relative py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-primary" href="/">Home</a>
+<a class="text-sm font-medium text-slate-500 transition-colors hover:text-slate-900" href="#">About</a>
+<a class="text-sm font-medium text-slate-500 transition-colors hover:text-slate-900" href="#">Projects</a>
+<a class="text-sm font-medium text-slate-500 transition-colors hover:text-slate-900" href="#">Blog</a>
+<a class="text-sm font-medium text-slate-500 transition-colors hover:text-slate-900" href="#">Scrap</a>
+<a class="text-sm font-medium text-slate-500 transition-colors hover:text-slate-900" href="#">Contact</a>
+</nav>
+<button class="flex items-center justify-center p-2 text-slate-500 md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<section class="mx-auto max-w-[1200px] px-6 lg:px-8 py-20 md:py-32">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2 rounded-full border border-slate-100 bg-slate-50/50 px-3 py-1 text-xs font-medium text-slate-600 mb-6">
+<span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+                    Available for enterprise AI contracts
+                </div>
+<h1 class="text-[40px] md:text-[56px] font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
+                    Architecting the future of autonomous enterprise systems.
+                </h1>
+<p class="text-[18px] md:text-[20px] text-slate-600 leading-relaxed mb-10 max-w-2xl">
+                    Senior Backend &amp; AI Agent Freelance Engineer. I build robust, scalable architectures and integrate intelligent agentic workflows to automate complex business processes.
+                </p>
+<div class="flex flex-wrap gap-4">
+<a class="inline-flex h-12 items-center justify-center rounded-full bg-accent-blue px-8 text-sm font-semibold text-white transition-all hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-200" href="#">
+                        Get Started
+                    </a>
+<a class="inline-flex h-12 items-center justify-center rounded-full border border-slate-200 bg-white px-8 text-sm font-semibold text-slate-900 transition-colors hover:bg-slate-50" href="#">
+                        Case Studies
+                    </a>
+</div>
+</div>
+</section>
+<section class="bg-slate-50/30 py-24 border-y border-slate-100">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm transition-transform hover:-translate-y-1">
+<div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-slate-900">
+<span class="material-symbols-outlined">settings_suggest</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-3">Operational Excellence</h3>
+<p class="text-slate-600 leading-relaxed text-sm">Streamlined CI/CD pipelines, high-availability clusters, and meticulous monitoring for mission-critical systems.</p>
+</div>
+<div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm transition-transform hover:-translate-y-1">
+<div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-slate-900">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-3">Scalable Architecture</h3>
+<p class="text-slate-600 leading-relaxed text-sm">Distributed microservices and event-driven patterns designed to handle millions of requests without breaking a sweat.</p>
+</div>
+<div class="p-8 rounded-2xl border border-slate-100 bg-white shadow-sm transition-transform hover:-translate-y-1">
+<div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-slate-900">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-3">AI Agent Integration</h3>
+<p class="text-slate-600 leading-relaxed text-sm">Leveraging LLMs to create self-correcting agents that navigate complex workflows and automate decision-making.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mx-auto max-w-[1200px] px-6 lg:px-8 py-24">
+<div class="flex items-end justify-between mb-12">
+<div>
+<h2 class="text-3xl font-bold text-slate-900">Featured Projects</h2>
+<p class="text-slate-500 mt-2">Selected work in distributed systems and AI.</p>
+</div>
+<a class="group flex items-center gap-1 text-sm font-semibold text-accent-blue hover:underline" href="#">
+                    View More
+                    <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group flex flex-col">
+<div class="aspect-video w-full overflow-hidden rounded-2xl bg-slate-100 mb-6">
+<img alt="Project Thumbnail" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaNQgUEQz_Mmbu8cS7ghuGt6kkpUQYYz52BQz7GG2nOOuFApXELz8f60TOq9-S6h6RGHzmeUmUeOMWbjaH3a19HpVTpBJkPe1v8lX59G8qvmbiRMYeeU4UYcAkvZxw0FsFA5VjMwoO6UZYpiS7FVXdCWusp0nlL7wsDEOo-jyyVG61xqigpixVHbSqFllMeK2wC6Jifoa59LGhmxqb97KkRIF_K0o6hTqykk_x9EbnTStYGMWks1BCiortikZaUrgl_cf6ugWI3Ehk"/>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">NeuralPipeline OS</h3>
+<p class="text-slate-600 text-sm mb-4">An autonomous data processing engine with integrated AI agents for real-time anomaly detection.</p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="px-2 py-1 bg-slate-50 border border-slate-100 rounded text-[10px] font-bold text-slate-500 uppercase tracking-wider">Python</span>
+<span class="px-2 py-1 bg-slate-50 border border-slate-100 rounded text-[10px] font-bold text-slate-500 uppercase tracking-wider">Kubernetes</span>
+<span class="px-2 py-1 bg-slate-50 border border-slate-100 rounded text-[10px] font-bold text-slate-500 uppercase tracking-wider">OpenAI</span>
+</div>
+</div>
+<div class="group flex flex-col">
+<div class="aspect-video w-full overflow-hidden rounded-2xl bg-slate-100 mb-6">
+<img alt="Project Thumbnail" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYZFNZqaVR76-Y5kjB_eVMylsamGln-ogT_eTQIKLXNv3-kF_p6GRTSumLOFFvNbuOi7_39zzNz1phnLnQOumogi4K_x9YIHyysDdlMo4cUkiPhKhiqA-KmpO9LckoWmpAHgSUhkBe80xq5UeEYPlPV4UVdjKDI41v9jVy_Dzcpt0ERpNV0uhZuAotAnqZO8bamjO0h3ulnITDDH6Cl3FDcLdoF_YweOREjvV0ZC0lag5UnxPtZ0uR_EXneWKYueNMnIeyp3Zl3nLP"/>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">QuantAgent Framework</h3>
+<p class="text-slate-600 text-sm mb-4">A high-frequency trading backend leveraging multi-agent systems for market sentiment analysis.</p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="px-2 py-1 bg-slate-50 border border-slate-100 rounded text-[10px] font-bold text-slate-500 uppercase tracking-wider">Go</span>
+<span class="px-2 py-1 bg-slate-50 border border-slate-100 rounded text-[10px] font-bold text-slate-500 uppercase tracking-wider">Redis</span>
+<span class="px-2 py-1 bg-slate-50 border border-slate-100 rounded text-[10px] font-bold text-slate-500 uppercase tracking-wider">TensorFlow</span>
+</div>
+</div>
+<div class="group flex flex-col">
+<div class="aspect-video w-full overflow-hidden rounded-2xl bg-slate-100 mb-6">
+<img alt="Project Thumbnail" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqiF-cbXbQMmGgpH-s19CcsOvYoOmzL_E_DZc6ARx52Q-PniMsXubHiZEPELAXZP68GEWm_R39ByZXTACaU6KmIr-u8FZHClN3vHVmy0k_4ObvpZlqjTwfx3AuJqF8V58GkI9gtPVNtAt-5juMzKb8KszlTMxVBxtN09KsWay4Y_Y8Yx69Y7LAW9a6JtKGuUy6mB8Z3oQNSjeZsSpQiuY21Hax6ZAKc02e9XwJFVMAJ97VsmSLN-mmjNG5qickgVhvDkcD9U4U8zvw"/>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">EdgeCompute Mesh</h3>
+<p class="text-slate-600 text-sm mb-4">Decentralized backend architecture for IoT device management with local LLM processing capabilities.</p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="px-2 py-1 bg-slate-50 border border-slate-100 rounded text-[10px] font-bold text-slate-500 uppercase tracking-wider">Rust</span>
+<span class="px-2 py-1 bg-slate-50 border border-slate-100 rounded text-[10px] font-bold text-slate-500 uppercase tracking-wider">WebAssembly</span>
+<span class="px-2 py-1 bg-slate-50 border border-slate-100 rounded text-[10px] font-bold text-slate-500 uppercase tracking-wider">gRPC</span>
+</div>
+</div>
+</div>
+</section>
+<section class="border-t border-slate-100 bg-white py-24">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-xl font-bold text-slate-900">Latest from Blog</h2>
+<a class="text-sm font-medium text-slate-500 hover:text-accent-blue" href="#">View all</a>
+</div>
+<div class="space-y-8">
+<article class="group">
+<time class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 block">Oct 24, 2024</time>
+<h3 class="text-lg font-bold text-slate-900 group-hover:text-accent-blue transition-colors">
+<a href="#">The Rise of Agentic Workflows in Enterprise SaaS</a>
+</h3>
+<p class="text-slate-500 text-sm mt-2 line-clamp-2">Moving beyond simple automation to self-healing systems powered by Large Language Models.</p>
+</article>
+<article class="group">
+<time class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 block">Oct 12, 2024</time>
+<h3 class="text-lg font-bold text-slate-900 group-hover:text-accent-blue transition-colors">
+<a href="#">Scaling Python Backends to 100k Concurrent Users</a>
+</h3>
+<p class="text-slate-500 text-sm mt-2 line-clamp-2">Optimization techniques using Asyncio, UVLoop, and horizontal scaling strategies.</p>
+</article>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-xl font-bold text-slate-900">Tech Scraps</h2>
+<a class="text-sm font-medium text-slate-500 hover:text-accent-blue" href="#">Explore lab</a>
+</div>
+<div class="space-y-6">
+<div class="p-5 rounded-xl bg-slate-50/50 border border-slate-100">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-xl">terminal</span>
+<div>
+<p class="text-sm font-medium text-slate-900">One-liner for optimizing Docker builds for heavy Python ML dependencies.</p>
+<span class="text-[11px] text-slate-400 mt-2 block">#devops #docker #python</span>
+</div>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-slate-50/50 border border-slate-100">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-xl">lightbulb</span>
+<div>
+<p class="text-sm font-medium text-slate-900">Conceptual thought: Using Vector DBs as "Short-term Memory" for stateless agents.</p>
+<span class="text-[11px] text-slate-400 mt-2 block">#ai #architecture</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-slate-100 bg-white py-16">
+<div class="mx-auto max-w-[1200px] px-6 lg:px-8">
+<div class="flex flex-col items-center justify-between gap-8 md:flex-row">
+<div class="text-center md:text-left">
+<p class="text-sm font-bold text-slate-900">© 2024 Leo. Built for the era of AI.</p>
+<p class="mt-1 text-xs text-slate-500">Based in Seoul. Working Globally.</p>
+<p class="mt-2 text-[10px] font-medium text-slate-400 uppercase tracking-widest">Last Updated: Nov 2024</p>
+</div>
+<div class="flex items-center gap-6">
+<a aria-label="GitHub" class="text-slate-400 hover:text-slate-900 transition-colors" href="#">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+<a aria-label="LinkedIn" class="text-slate-400 hover:text-slate-900 transition-colors" href="#">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
+</a>
+<a aria-label="Email" class="text-slate-400 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

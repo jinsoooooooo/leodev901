@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0677f9",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1823",
+                        "editor-bg": "#0d1117",
+                        "sidebar-bg": "#161b22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #30363d; border-radius: 10px; }
+        .markdown-content h1 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #f8fafc; }
+        .markdown-content h2 { font-size: 1.5rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #f1f5f9; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+        .markdown-content p { margin-bottom: 1rem; line-height: 1.7; color: #cbd5e1; }
+        .markdown-content code { background: #1e293b; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.9em; color: #38bdf8; }
+        .markdown-content pre { background: #1e293b; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; overflow-x: auto; }
+        .markdown-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="flex flex-col h-screen">
+<!-- Top Action Bar -->
+<header class="flex h-14 items-center justify-between px-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark shrink-0">
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                    목록으로
+                </a>
+<div class="h-4 w-px bg-slate-200 dark:bg-slate-800"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">edit_note</span>
+<span class="text-sm font-semibold">새로운 블로그 포스트 작성</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-lg">save</span>
+                    저장(Draft)
+                </button>
+<button class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-lg">visibility</span>
+                    미리보기
+                </button>
+<button class="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-lg">download</span>
+                    내보내기
+                </button>
+<button class="flex items-center gap-2 px-4 py-1.5 text-sm font-bold rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">rocket_launch</span>
+                    발행(Publish)
+                </button>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex flex-1 overflow-hidden">
+<!-- Split View Editor -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Left Pane: Markdown Editor -->
+<div class="flex-1 flex flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-editor-bg">
+<div class="flex items-center justify-between px-4 py-2 bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500">Editor</span>
+<div class="flex gap-2">
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors" title="Bold"><span class="material-symbols-outlined text-lg">format_bold</span></button>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors" title="Italic"><span class="material-symbols-outlined text-lg">format_italic</span></button>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors" title="Link"><span class="material-symbols-outlined text-lg">link</span></button>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors" title="Image"><span class="material-symbols-outlined text-lg">image</span></button>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors" title="Code"><span class="material-symbols-outlined text-lg">code</span></button>
+</div>
+</div>
+<textarea class="flex-1 w-full p-6 bg-transparent border-none focus:ring-0 font-mono text-sm leading-relaxed resize-none text-slate-800 dark:text-slate-300 custom-scrollbar" spellcheck="false"># 안녕하세요, 새로운 포스트를 시작하세요
+
+여기에 내용을 작성해보세요. **마크다운** 문법이 실시간으로 지원됩니다.
+
+## 주요 기능들
+
+1. **실시간 프리뷰**: 우측에서 렌더링된 결과를 확인하세요.
+2. **반응형 디자인**: 다양한 화면에서 최적화된 편집 환경을 제공합니다.
+3. **메타데이터 관리**: 우측 사이드바에서 SEO와 태그를 관리하세요.</textarea></div></div></main></div></body></html>
