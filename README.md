@@ -2,8 +2,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+먼저 패키지 의존성 설치
+```bash
+npm install
+``` 
 
+그리고, 개발 서버 실행하기
 ```bash
 npm run dev
 # or
