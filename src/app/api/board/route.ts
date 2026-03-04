@@ -93,6 +93,9 @@
 // }
 // 
 // // 더미 GET 핸들러(빌드 통과용) - GitHub Pages 정적 배포 호환을 위해 비워둡니다.
+// 파일 경로 라우팅 에러 방지를 위해 static 모드로 강제 설정합니다.
+export const dynamic = 'force-static';
+
 export async function GET() {
     return new Response(JSON.stringify([]), {
         status: 200,
