@@ -4,8 +4,8 @@ export default function Footer() {
             <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
                 <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                     <div className="text-center md:text-left">
-                        <p className="text-sm font-medium text-slate-900 dark:text-white">© 2024 Leo. All rights reserved.</p>
-                        <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Built with Next.js & Tailwind CSS.</p>
+                        <p className="text-sm font-medium text-slate-900 dark:text-white">© 2026 Leo. All rights reserved.</p>
+                        <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">email: admin@leodev901.onmicrosoft.com</p>
                         <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}</p>
                     </div>
                     <div className="flex items-center gap-4">

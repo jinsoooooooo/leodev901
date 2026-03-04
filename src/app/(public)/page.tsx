@@ -10,10 +10,10 @@ export default function Home() {
             Available for new projects
           </div>
           <div className="space-y-4">
-            <h1 className="text-[40px] md:text-[56px] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6">
+            <h1 className="text-[40px] md:text-[56px] font-extrabold tracking-tight leading-[1.1] mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 animate-gradient-x bg-[length:200%_auto]">
               Architecting the future of autonomous enterprise systems.
             </h1>
-            <p className="text-[18px] md:text-[20px] text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-2xl">
+            <p className="text-[18px] md:text-[20px] text-slate-600 dark:text-slate-400 leading-relaxed mb-10 max-w-2xl animate-fade-in-up">
               Senior Backend & AI Agent Freelance Engineer. I build robust, scalable architectures and integrate intelligent agentic workflows to automate complex business processes.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
@@ -29,25 +29,25 @@ export default function Home() {
 
         <section className="bg-slate-50/30 dark:bg-slate-900/30 py-24 border-y border-slate-100 dark:border-slate-800">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl border border-slate-100 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm transition-transform hover:-translate-y-1">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white">
+            <div className="group p-8 rounded-2xl border border-slate-100 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.3)] hover:border-blue-500/30">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white group-hover:bg-blue-50 group-hover:text-blue-600 dark:group-hover:bg-blue-900/30 dark:group-hover:text-blue-400 transition-colors">
                 <span className="material-symbols-outlined">settings_suggest</span>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Operational Excellence</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Operational Excellence</h3>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Streamlined CI/CD pipelines, high-availability clusters, and meticulous monitoring for mission-critical systems.</p>
             </div>
-            <div className="p-8 rounded-2xl border border-slate-100 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm transition-transform hover:-translate-y-1">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white">
+            <div className="group p-8 rounded-2xl border border-slate-100 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.3)] hover:border-blue-500/30">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white group-hover:bg-blue-50 group-hover:text-blue-600 dark:group-hover:bg-blue-900/30 dark:group-hover:text-blue-400 transition-colors">
                 <span className="material-symbols-outlined">hub</span>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Scalable Architecture</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Scalable Architecture</h3>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Distributed microservices and event-driven patterns designed to handle millions of requests without breaking a sweat.</p>
             </div>
-            <div className="p-8 rounded-2xl border border-slate-100 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm transition-transform hover:-translate-y-1">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white">
+            <div className="group p-8 rounded-2xl border border-slate-100 bg-white dark:bg-slate-900 dark:border-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.3)] hover:border-blue-500/30">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white group-hover:bg-blue-50 group-hover:text-blue-600 dark:group-hover:bg-blue-900/30 dark:group-hover:text-blue-400 transition-colors">
                 <span className="material-symbols-outlined">psychology</span>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">AI Agent Integration</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">AI Agent Integration</h3>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Leveraging LLMs to create self-correcting agents that navigate complex workflows and automate decision-making.</p>
             </div>
           </div>
@@ -85,8 +85,8 @@ export default function Home() {
                 tags: ["React", "TypeScript", "AWS"]
               }
             ].map((project, idx) => (
-              <div key={idx} className="group flex flex-col rounded-xl border border-slate-200 bg-white transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 dark:border-slate-700 dark:bg-slate-800/50">
-                <div className="aspect-video w-full rounded-t-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
+              <div key={idx} className="group flex flex-col rounded-xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/50 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.25)] dark:border-slate-700 dark:bg-slate-800/50">
+                <div className="aspect-video w-full rounded-t-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden transition-colors duration-300 group-hover:bg-blue-50/50 dark:group-hover:bg-blue-900/20">
                   <div className="text-slate-400">
                     <span className="material-symbols-outlined text-6xl opacity-20">{project.icon}</span>
                   </div>
