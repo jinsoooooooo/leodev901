@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Contact() {
     const [copied, setCopied] = React.useState(false);
-    const email = "hello@leodev901.com";
+    const email = "admin@leodev901.onmicrosoft.com";
 
     const copyEmail = () => {
         navigator.clipboard.writeText(email);
