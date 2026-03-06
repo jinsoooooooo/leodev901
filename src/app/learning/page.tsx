@@ -219,6 +219,33 @@ export default function LearningDashboardPage() {
                         </div>
                     </Link>
 
+                    {/* Step 13 카드 - 노션 스타일 블로그 */}
+                    <Link href="/learning/blog" className="block group md:col-span-2">
+                        <div className="bg-white rounded-2xl p-6 shadow-md border border-violet-100 hover:shadow-xl hover:border-violet-300 transition-all duration-300 h-full relative overflow-hidden">
+                            <div className="absolute top-0 right-0 p-4">
+                                <span className="flex h-3 w-3">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-violet-500"></span>
+                                </span>
+                            </div>
+                            <div className="text-violet-500 font-bold text-sm mb-2 uppercase tracking-wider">Step 13</div>
+                            <h2 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-violet-600 transition-colors">
+                                📔 노션 스타일 블로그
+                            </h2>
+                            <p className="text-gray-600 leading-relaxed mb-4">
+                                서버 컴포넌트 + SEO를 실전 적용합니다! Supabase posts 테이블을 서버에서 직접 조회하고, <code>generateMetadata</code>로 게시글마다 다른 SEO를 자동 생성합니다. 노션처럼 사이드바 + 상세 본문 구조로 구현합니다.
+                            </p>
+                            <div className="flex gap-2 flex-wrap">
+                                <div className="inline-flex items-center text-sm font-semibold text-violet-600 bg-violet-50 px-3 py-1 rounded-full">
+                                    generateMetadata 🔍
+                                </div>
+                                <div className="inline-flex items-center text-sm font-semibold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
+                                    Island Pattern 🏝️
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+
                 </div>
             </div>
         </div>

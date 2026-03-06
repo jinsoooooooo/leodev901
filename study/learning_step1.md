@@ -144,3 +144,186 @@ export default function CounterApp() {
 
 **Q. 왜 `let`이 아니라 `const`로 선언하나요? 값이 바뀌는데 `const`라니?**
 * **A.** 좋은 질문입니다! `const [count, setCount]`에서 `count`는 읽기 전용 **스냅샷**입니다. `setCount`를 호출하면 `count` 변수 자체를 수정하는 게 아니라, React가 컴포넌트 함수를 **처음부터 다시 실행**하면서 **새로운 값의 `count`**를 만들어주는 것입니다. 기존 `count`는 건드리지 않으므로 `const`가 맞습니다!
+
+---
+
+## 6. 📐 React 페이지를 만드는 기본 패턴 총정리
+
+### (1) 파일 하나 = 컴포넌트 하나 — 기본 구조
+
+```tsx
+'use client';                        // 1. 인터랙션 필요 시 맨 첫 줄
+
+import { useState, useEffect } from 'react';  // 2. 필요한 것만 import
+import Link from 'next/link';
+
+// 3. 컴포넌트 함수 선언 (함수명은 PascalCase — 첫 글자 대문자!)
+//    파일명이 page.tsx이면 export default 필수!
+export default function MyPage() {
+
+    // 4. 상태 선언 (화면에 보이는 데이터)
+    const [value, setValue] = useState('');
+
+    // 5. 이펙트 (페이지가 켜질 때 한 번 실행)
+    useEffect(() => {
+        // 초기 데이터 로드 등
+    }, []);
+
+    // 6. 이벤트 핸들러 (로직 함수)
+    const handleClick = () => {
+        setValue('변경!');
+    };
+
+    // 7. JSX 반환 — 반드시 하나의 부모 태그로 감싸야 함
+    return (
+        <div>
+            <h1>{value}</h1>
+            <button onClick={handleClick}>클릭</button>
+        </div>
+    );
+}
+```
+
+---
+
+### (2) Next.js + React 약속된(예약된) 이름들
+
+```tsx
+// ─── 파일 이름 약속 ─────────────────────────────────
+page.tsx          // 해당 경로의 페이지 (필수)
+layout.tsx        // 해당 경로 전체를 감싸는 껍데기
+loading.tsx       // 페이지 로딩 중 표시할 UI
+error.tsx         // 에러 발생 시 표시할 UI
+not-found.tsx     // 404 페이지
+
+// ─── export 이름 약속 ────────────────────────────────
+export default function Page()              // 페이지 컴포넌트 (이름은 자유, default가 핵심!)
+export const metadata = { ... }             // 고정 SEO
+export async function generateMetadata()    // 동적 SEO
+export async function generateStaticParams() // 정적 경로 미리 생성
+```
+
+---
+
+### (3) 컴포넌트 선언 방법 — 3가지 모두 같습니다
+
+```tsx
+// A. 함수 선언식 (가장 일반적)
+export default function MyPage() {
+    return <div>안녕</div>;
+}
+
+// B. 화살표 함수 (함수 표현식)
+const MyPage = () => {
+    return <div>안녕</div>;
+};
+export default MyPage;
+
+// C. 화살표 함수 단축 (return 생략)
+const MyPage = () => <div>안녕</div>;
+export default MyPage;
+```
+
+> 💡 세 가지 모두 동일한 동작입니다. 실무에서는 주로 **A (함수 선언식)** 를 씁니다.
+
+---
+
+### (4) JSX 필수 규칙 — "HTML과 다른 점"
+
+```tsx
+// ❌ HTML 방식                  ✅ JSX 방식
+class="box"               →    className="box"         // 예약어 충돌 방지
+for="id"                  →    htmlFor="id"            // label의 for 속성
+<br>                      →    <br />                  // 빈 태그는 자기 닫기 필수
+<!-- 주석 -->              →    {/* 주석 */}             // JSX 주석
+style="color: red"        →    style={{ color: 'red' }} // 객체 형태!
+
+// ❌ 두 개 형제 태그 (오류!)
+return (
+    <h1>제목</h1>           
+    <p>내용</p>             
+)
+
+// ✅ 하나의 부모로 감싸기
+return (
+    <div>                   // 또는 <> (빈 태그, Fragment)
+        <h1>제목</h1>
+        <p>내용</p>
+    </div>
+)
+```
+
+---
+
+### (5) 데이터를 화면에 표시하는 방법
+
+```tsx
+const name = '레오';
+const count = 42;
+const isLoggedIn = true;
+const items = ['사과', '바나나', '포도'];
+
+return (
+    <div>
+        {/* 변수 출력 */}
+        <p>{name}</p>                        {/* → 레오 */}
+
+        {/* 계산식 */}
+        <p>{count * 2}</p>                   {/* → 84 */}
+
+        {/* 조건부 렌더링 */}
+        {isLoggedIn && <p>로그인됨</p>}       {/* true일 때만 표시 */}
+        {isLoggedIn ? <p>환영</p> : <p>로그인 필요</p>}
+
+        {/* 배열 → 목록 (map 필수, key 필수!) */}
+        {items.map((item, index) => (
+            <li key={index}>{item}</li>      {/* key가 없으면 경고! */}
+        ))}
+    </div>
+);
+```
+
+---
+
+### (6) Props — 부모가 자식에게 데이터 전달
+
+```tsx
+// 자식 컴포넌트 정의
+function UserCard({ name, age }: { name: string; age: number }) {
+    return <p>{name} ({age}세)</p>;
+}
+
+// 부모에서 사용
+function ParentPage() {
+    return <UserCard name="레오" age={25} />;
+    //      ↑ 문자열은 ""   ↑ 숫자/변수는 {}
+}
+```
+
+---
+
+### (7) 이벤트 핸들러 패턴 정리
+
+```tsx
+// 클릭
+<button onClick={() => doSomething()}>클릭</button>
+<button onClick={handleClick}>클릭</button>   // 함수만 넘길 때 () 생략
+
+// 입력 (onChange)
+<input onChange={(e) => setValue(e.target.value)} />
+
+// 폼 제출
+<form onSubmit={(e) => {
+    e.preventDefault();   // 브라우저 새로고침 막기 (필수!)
+    handleSubmit();
+}}>
+
+// 자주 쓰는 이벤트들
+onClick     // 클릭
+onChange    // 입력값 변경
+onSubmit    // 폼 제출
+onKeyDown   // 키보드 누름
+onFocus     // 포커스 들어옴
+onBlur      // 포커스 나감
+onMouseOver // 마우스 올림
+```

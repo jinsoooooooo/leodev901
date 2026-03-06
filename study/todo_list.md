@@ -38,3 +38,18 @@
 6. 🌐 Next.js 고급 기능들 (서버 컴포넌트, SEO) ----- (완료) 
 내용: 맨날 맨 윗줄에 치던 'use client'의 족쇄를 풀고, 진짜 Next.js의 꽃인 **서버 컴포넌트(Server Components)**를 다루는 법을 배웁니다.
 학습 포인트: 어떤 코드를 서버에서 돌리고 어떤 코드를 브라우저에서 돌릴지 스스로 설계하며 폭발적인 화면 로딩 속도 최적화를 경험할 수 있습니다. 검색엔진 노출(SEO)을 위한 메타데이터 설정도 필수입니다.
+
+
+---
+
+# 다음에 배울 수 있는 것들
+🔥 이 스택에서 남은 실무 핵심
+
+1. React Query (TanStack Query) 현재 `useEffect` + fetch 패턴을 대체하는 실무 표준. 캐싱, 로딩 상태, 에러 처리, 자동 refetch 등이 자동으로!
+
+2. Next.js 미들웨어 (Middleware) 로그인 안 한 사용자가 `/dashboard` 접근하면 자동으로 `/login`으로 튕겨내기. 인증 흐름의 완성.
+
+3. Next.js App Router 심화
+    - `loading.tsx` — 로딩 중 스켈레톤 UI
+    - `error.tsx` — 에러 경계 처리
+    - `Suspense` — 컴포넌트 단위 로딩

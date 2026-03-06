@@ -45,6 +45,9 @@ export default function LearningLayout({
                                 <Link href="/learning/auth" className="hover:bg-indigo-500 px-3 py-2 rounded-md transition text-sm font-medium text-orange-300">
                                     🗂️ 10.인증
                                 </Link>
+                                <Link href="/learning/blog" className="hover:bg-indigo-500 px-3 py-2 rounded-md transition text-sm font-medium text-violet-300">
+                                    📔 13.블로그
+                                </Link>
                             </div>
                         </div>
                     </div>
