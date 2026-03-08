@@ -15,6 +15,41 @@ export default function Projects() {
                     </p>
                 </div>
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                    {/* Smart Home AI Project Entry */}
+                    <a href="https://rats-pod-screensaver-advisors.trycloudflare.com/" target="_blank" rel="noopener noreferrer" className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+                        <div className="aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-800 relative">
+                            {/* 프로젝트 스크린샷 활용 */}
+                            <img
+                                src="/portfolio-smart-home.png"
+                                alt="Smart Home AI Dashboard"
+                                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="flex flex-1 flex-col p-6 sm:p-8">
+                            <div className="mb-4">
+                                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Smart Home AI (부동산 AI 어시스턴트)</h3>
+                                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">부동산 거래의 안전과 편의를 위한 AI 기반 법률 및 계약 지원 플랫폼</p>
+                            </div>
+                            <div className="mb-6 flex-1">
+                                <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                                    <li className="flex items-start gap-2">
+                                        <span className="material-symbols-outlined mt-0.5 text-[18px] text-primary">check_circle</span>
+                                        <span>AI 법률 챗봇을 통한 24시간 실시간 부동산 상담 및 복잡한 법률 용어 해석</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="material-symbols-outlined mt-0.5 text-[18px] text-primary">check_circle</span>
+                                        <span>인공지능 등기부등본 진단으로 근저당, 압류 등 위험 요소를 즉각적으로 파악</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+                                {['Python', 'LLM', 'OpenAI', 'Next.js', 'Risk Analysis'].map(tag => (
+                                    <span key={tag} className="inline-flex items-center rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-400">{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </a>
 
                     <Link href="/portfolio/ai-meeting-agent" className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
                         <div className="aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-800 relative">
