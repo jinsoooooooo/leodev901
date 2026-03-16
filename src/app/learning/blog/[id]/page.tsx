@@ -20,6 +20,20 @@ interface Params {
     params: Promise<{ id: string }>;
 }
 
+// ✅ generateStaticParams: 빌드 시점에 어떤 게시글 ID들이 있는지 Next.js에 알려주는 함수!
+// output: export 환경에서는 동적 라우팅을 위해 반드시 필요합니다.
+export async function generateStaticParams() {
+    const { data: posts } = await supabase
+        .from('posts')
+        .select('id');
+        
+    if (!posts) return [];
+
+    return posts.map((post) => ({
+        id: post.id.toString(),
+    }));
+}
+
 // ✅ generateMetadata: 각 게시글마다 다른 SEO를 동적으로 생성하는 함수!
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
     // 💡 Next.js 15에서 params는 Promise입니다 → await로 꺼내야 합니다!
