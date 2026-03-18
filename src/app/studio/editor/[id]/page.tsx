@@ -4,8 +4,8 @@ export const metadata = {
   title: '포스트 수정 - CMS Studio',
 };
 
-export function generateStaticParams() {
-  return [];
+export async function generateStaticParams() {
+  return [{ id: 'new' }];
 }
 
 /**
