@@ -1,24 +1,25 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: '새 포스트 작성 - CMS Studio',
+  title: '포스트 수정 - CMS Studio',
 };
 
 /**
- * 💡 [학습노트] 에디터 페이지 (새 글 작성)
- * URL: /studio/editor
+ * 💡 [학습노트] 에디터 수정 페이지
+ * URL: /studio/editor/[id]
  * 
- * 대시보드와 달리 사이드바가 없는 "전체 화면(Full-screen)" 뷰입니다.
- * (dashboard) 폴더 바깥에 위치하기 때문에, 대시보드의 layout.tsx의 영향을 받지 않습니다.
- * 
- * h-screen과 flex-col 조합을 사용하여 화면 전체 높이를 차지하도록 하고,
- * textarea 영역이 남은 공간을 모두 차지하도록 flex-1을 주었습니다.
+ * 기존 글을 "수정"할 때 들어오는 페이지입니다.
+ * 컴포넌트 구조는 새 글 작성(editor/page.tsx)과 거의 100% 동일하지만,
+ * 서버에서 [id] 파라미터를 받아와서 기존 글의 내용을 db에서 조회한 뒤 
+ * defaultValue 에 넣어주게 됩니다. (지금은 하드코딩 되어 있습니다!)
  */
-export default function NewEditorPage() {
+export default async function EditPostPage({ params }: { params: Promise<{ id: string }> }) {
+  // 실제로는 여기서 supabase db를 통해 글 고유번호(id)로 글 내용을 조회합니다.
+  const { id } = await params;
+  
   return (
     <div className="flex flex-col h-screen bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
       
-      {/* 1. Top Action Bar (에디터 전용 상단바) */}
       <header className="flex h-14 items-center justify-between px-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shrink-0">
         <div className="flex items-center gap-4">
           <Link href="/studio" className="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors text-sm font-medium">
@@ -28,7 +29,7 @@ export default function NewEditorPage() {
           <div className="h-4 w-px bg-slate-200 dark:bg-slate-800"></div>
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-primary text-xl">edit_note</span>
-            <span className="text-sm font-semibold">새로운 블로그 포스트 작성</span>
+            <span className="text-sm font-semibold">블로그 포스트 수정 (ID: {id})</span>
           </div>
         </div>
         
@@ -43,16 +44,14 @@ export default function NewEditorPage() {
           </button>
           <button className="flex items-center gap-2 px-4 py-1.5 text-sm font-bold rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors shadow-sm">
             <span className="material-symbols-outlined text-lg">rocket_launch</span>
-            발행(Publish)
+            변경사항 발행
           </button>
         </div>
       </header>
 
-      {/* 2. Main Workspace (에디터 영역) */}
       <main className="flex flex-1 overflow-hidden">
         <div className="flex flex-1 overflow-hidden">
           
-          {/* Left Pane: Markdown Editor */}
           <div className="flex-1 flex flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
             <div className="flex items-center justify-between px-4 py-2 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Editor</span>
@@ -72,16 +71,12 @@ export default function NewEditorPage() {
               </div>
             </div>
             
-            {/* 텍스트 입력 영역 */}
             <textarea 
               className="flex-1 w-full p-6 bg-transparent border-none focus:ring-0 font-mono text-sm leading-relaxed resize-none text-slate-800 dark:text-slate-300 outline-none" 
               spellCheck="false"
-              placeholder="# 마크다운 내용 입력..."
-              defaultValue={`# 안녕하세요, 새로운 포스트를 시작하세요\n\n여기에 내용을 작성해보세요. **마크다운** 문법이 실시간으로 지원됩니다.\n\n## 주요 기능들\n\n1. **실시간 프리뷰**: 우측에서 렌더링된 결과를 확인하세요.\n2. **반응형 디자인**: 다양한 화면에서 최적화된 편집 환경을 제공합니다.\n3. **메타데이터 관리**: 우측 사이드바에서 SEO와 태그를 관리하세요.`}
+              defaultValue={`# System Design: Scalable Chat App\n\n이 글은 기존에 작성되었던 글을 불러온 모습입니다!\n\n여기서 마음껏 수정하고 변경사항 발행 버튼을 누르면 업데이트 됩니다.`}
             />
           </div>
-          
-          {/* (선택사항) 우측 프리뷰 또는 설정 사이드바가 들어갈 공간을 위해 디자인 템플릿의 여백 유지 */}
         </div>
       </main>
     </div>

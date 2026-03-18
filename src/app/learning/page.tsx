@@ -246,6 +246,33 @@ export default function LearningDashboardPage() {
                         </div>
                     </Link>
 
+                    {/* Step 14 카드 - SSR 인증과 인가 */}
+                    <Link href="/learning/ssr-auth" className="block group md:col-span-2">
+                        <div className="bg-white rounded-2xl p-6 shadow-md border border-blue-100 hover:shadow-xl hover:border-blue-300 transition-all duration-300 h-full relative overflow-hidden">
+                            <div className="absolute top-0 right-0 p-4">
+                                <span className="flex h-3 w-3">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                                </span>
+                            </div>
+                            <div className="text-blue-500 font-bold text-sm mb-2 uppercase tracking-wider">Step 14</div>
+                            <h2 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
+                                🛡️ SSR 인증과 인가 (Server Auth)
+                            </h2>
+                            <p className="text-gray-600 leading-relaxed mb-4">
+                                서버 환경(Server Components)에서 HTTP 쿠키(Cookie)를 읽어 안전하게 로그인 상태와 커스텀 권한(user_roles)을 확인하는 정석적인 패턴을 실습합니다. SEO 최적화와 보안을 동시에 잡는 필수 기술입니다!
+                            </p>
+                            <div className="flex gap-2 flex-wrap">
+                                <div className="inline-flex items-center text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                                    @supabase/ssr 🍪
+                                </div>
+                                <div className="inline-flex items-center text-sm font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
+                                    Server Client 🚦
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+
                 </div>
             </div>
         </div>
