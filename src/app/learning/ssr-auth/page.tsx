@@ -1,45 +1,49 @@
-import React from 'react';
+"use client";
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-// 방금 만든 서버 전용 클라이언트 불러오기
-import { createClient } from '@/app/lib/supabase-server';
+import { createClient } from '@/app/lib/supabase-browser';
 import LogoutButton from '@/app/components/auth/LogoutButton';
 import LoginTrigger from '@/app/components/auth/LoginTrigger';
+import { User } from '@supabase/supabase-js';
 
-export default async function SSRAuthPage() {
-    // 💡 서버 컴포넌트이므로 'use client'가 없습니다!
-    // 내부에서 await를 자유롭게 사용할 수 있습니다.
+export default function SSRAuthPage() {
+    const [user, setUser] = useState<User | null>(null);
+    const [role, setRole] = useState<string | null>(null);
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
-    let user = null;
-    let role = null;
-    let errorMessage = null;
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const supabase = createClient();
+                const { data: userData } = await supabase.auth.getUser();
 
-    try {
-        // 1. 서버 클라이언트 초기화 (요청으로 들어온 쿠키를 뜯어서 해석합니다)
-        const supabase = await createClient();
+                if (userData?.user) {
+                    setUser(userData.user);
 
-        // 2. 현재 쿠키를 기반으로 유저 정보 가져오기
-        const { data: userData } = await supabase.auth.getUser();
+                    const { data: roleData } = await supabase
+                        .from('user_roles')
+                        .select('role')
+                        .eq('user_id', userData.user.id)
+                        .single();
 
-        if (userData?.user) {
-            user = userData.user;
+                    setRole(roleData?.role || 'user');
+                }
+            } catch (e: any) {
+                setErrorMessage(e.message || "클라이언트 초기화 중 오류가 발생했습니다.");
+            } finally {
+                setIsLoading(false);
+            }
+        };
 
-            // 3. 유저 ID를 이용해 leodev901 스키마의 user_roles 테이블에서 역할(Role) 꺼내오기
-            const { data: roleData } = await supabase
-                .from('user_roles')
-                .select('role')
-                .eq('user_id', user.id)
-                .single();
-
-            // 데이터가 있으면 권한 할당, 없으면 기본값 'user'
-            role = roleData?.role || 'user';
-        }
-    } catch (e: any) {
-        errorMessage = e.message || "서버 클라이언트 초기화 중 오류가 발생했습니다. (npm install @supabase/ssr 설치 여부를 확인하세요)";
-    }
+        fetchUser();
+    }, []);
 
     const handleLogout = async () => {
-        const supabase = await createClient();
+        const supabase = createClient();
         await supabase.auth.signOut();
+        setUser(null);
+        setRole(null);
     };
 
     return (
@@ -55,13 +59,15 @@ export default async function SSRAuthPage() {
                     <div className="bg-red-50 text-red-700 p-4 rounded-xl mb-8 border border-red-200 shadow-sm">
                         🚨 {errorMessage}
                     </div>
+                ) : isLoading ? (
+                    <div className="text-center p-8">로딩 중...</div>
                 ) : user ? (
-                    // ✅ 로그인된 상태 (서버에서 확인 완료)
+                    // ✅ 로그인된 상태
                     <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
                         <div className="text-center mb-6">
                             <div className="text-4xl mb-4">🎉</div>
-                            <h2 className="text-xl font-bold text-slate-800">서버 렌더링 성공!</h2>
-                            <p className="text-sm text-slate-500">이 화면은 서버에서 만들어진 채 내려왔습니다. (SEO 최적화)</p>
+                            <h2 className="text-xl font-bold text-slate-800">렌더링 완료!</h2>
+                            <p className="text-sm text-slate-500">주의: 이 화면은 원래 SSR을 위한 것이었으나, Github Pages 정적 배포 호환을 위해 클라이언트 렌더링으로 수정되었습니다.</p>
                         </div>
 
                         <div className="bg-slate-50 rounded-xl p-5 text-left space-y-4 shadow-inner border border-slate-100">
@@ -104,12 +110,12 @@ export default async function SSRAuthPage() {
                 {/* 학습 정리 박스 */}
                 <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 shadow-sm">
                     <h3 className="font-bold text-indigo-900 mb-3 flex items-center gap-2">
-                        <span className="text-xl">💡</span> SSR 인증의 핵심 포인트
+                        <span className="text-xl">💡</span> 임시 클라이언트 렌더링 안내
                     </h3>
                     <ul className="text-indigo-800 text-sm space-y-3 list-disc pl-5 leading-relaxed">
-                        <li>이 컴포넌트는 클라이언트 JS가 동작하기 전, <strong>서버에서 유저 로그인 여부를 파악</strong>합니다. (SEO 최적화의 기본)</li>
-                        <li>브라우저 <code>localStorage</code>가 아닌 <strong>HTTP 쿠키(Cookie)</strong>를 해석하여 세션을 검증합니다.</li>
-                        <li>유저의 이메일 정보 획득과, 커스텀 DB(<code>leodev901.user_roles</code>) 조회를 <strong>서버 통신 2번 (await 2번)</strong>으로 연달아 깔끔하게 처리했습니다.</li>
+                        <li>이 컴포넌트는 원래 서버에서 동작하는 코드로 작성되었으나, <strong>Github Pages의 정적 HTML 호스팅 특성</strong> 때문에 빌드가 불가능했습니다.</li>
+                        <li>Github Pages에서는 백엔드 서버가 없어 <code>cookies()</code>를 사용할 수 없으므로, 부득이하게 전체 로직을 클라이언트 컴포넌트(<code>useEffect</code>)로 마이그레이션했습니다.</li>
+                        <li>진짜 SSR 인증을 경험하려면 Vercel 로 배포해야 합니다.</li>
                     </ul>
                 </div>
             </div>

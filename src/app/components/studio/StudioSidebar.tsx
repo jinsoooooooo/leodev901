@@ -1,5 +1,8 @@
+"use client";
 import Link from 'next/link';
-import { createClient } from '@/app/lib/supabase-server';
+import { createClient } from '@/app/lib/supabase-browser';
+import { useEffect, useState } from 'react';
+import { User } from '@supabase/supabase-js';
 
 import LogoutButton from '@/app/components/auth/LogoutButton';
 import LoginTrigger from '@/app/components/auth/LoginTrigger';
@@ -12,11 +15,24 @@ import LoginTrigger from '@/app/components/auth/LoginTrigger';
  * - w-64 로 너비를 16rem(256px)으로 고정했습니다.
  * - 다크모드 대응을 위해 dark: 접두사를 활용합니다. (예: dark:bg-background-dark)
  */
-export default async function StudioSidebar() {
+export default function StudioSidebar() {
+  const [user, setUser] = useState<User | null>(null);
 
-  const supabase = await createClient();
+  useEffect(() => {
+    const supabase = createClient();
+    
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user);
+    });
 
-  const { data: { user } } = await supabase.auth.getUser();
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
 
   return (
     <aside className="w-64 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full bg-white dark:bg-slate-900 z-20">
