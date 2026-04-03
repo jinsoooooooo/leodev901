@@ -27,7 +27,9 @@ export async function generateStaticParams() {
         .from('posts')
         .select('id');
         
-    if (!posts) return [];
+    if (!posts || posts.length === 0) {
+        return [{ id: 'dummy' }];
+    }
 
     return posts.map((post) => ({
         id: post.id.toString(),
