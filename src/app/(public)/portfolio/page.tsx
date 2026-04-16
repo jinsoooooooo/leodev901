@@ -53,7 +53,7 @@ export default function Projects() {
                                     <div className="h-8 border-b border-slate-100 dark:border-slate-800 flex items-center px-3 justify-between">
                                         <div className="flex items-center gap-2">
                                             <span className="material-symbols-outlined text-[14px] text-emerald-700 dark:text-emerald-500">directions_car</span>
-                                            <div className="text-[10px] font-bold text-emerald-900 dark:text-emerald-400">차량 매뉴얼 AI 어시스턴트</div>
+                                            <div className="text-[10px] font-bold text-emerald-900 dark:text-emerald-400">차량 매뉴얼 RAG 문서 검색 AI 어시스턴트</div>
                                         </div>
                                         <div className="px-1.5 py-0.5 rounded bg-emerald-100 text-[8px] font-bold text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
                                             RAG
@@ -93,7 +93,7 @@ export default function Projects() {
                         </div>
                         <div className="flex flex-1 flex-col p-6 sm:p-8">
                             <div className="mb-4">
-                                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">차량 매뉴얼 AI 어시스턴트</h3>
+                                <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">차량 매뉴얼 RAG 문서 검색 AI 어시스턴트</h3>
                                 <p className="text-sm font-medium text-slate-500 dark:text-slate-400">차량 매뉴얼 PDF를 하이브리드 RAG로 검색하고, 실시간 스트리밍으로 답변하는 차량 전용 AI 어시스턴트</p>
                             </div>
                             <div className="mb-6 flex-1">

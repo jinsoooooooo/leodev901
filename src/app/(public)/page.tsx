@@ -79,22 +79,22 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "SK 'A.Biz' Agent Builder",
-                desc: "엔터프라이즈 환경에서의 AI Agent(LangGraph) 흐름 최적화 및 Microsoft 365 연동 MCP 서버 핵심 기능 개발.",
-                icon: "robot_2",
-                tags: ["Python", "FastAPI", "PostgreSQL", "LangChain"]
+                title: "차량 매뉴얼 RAG 문서 검색 AI 어시스턴트",
+                desc: "차량 매뉴얼 PDF를 하이브리드 RAG로 검색하고, 실시간 스트리밍으로 답변하는 차량 전용 AI 어시스턴트.",
+                icon: "directions_car",
+                tags: ["FastAPI", "Supabase", "Hybrid RAG", "SSE"]
               },
               {
-                title: "SK렌터카 차세대 MSA 시스템",
-                desc: "Azure Cloud 기반의 마이크로서비스 전환 프로젝트. 단기렌탈 및 결제/수납 서비스 백엔드 전담.",
-                icon: "cloud_sync",
-                tags: ["Java", "Spring Boot", "Kafka", "Kubernetes"]
+                title: "멀티 에이전트 챗 서비스",
+                desc: "검색, 기억, 내부 문서 참고 RAG, 다중 토론 등 최신 에이전트 기법이 통합된 AI 서비스.",
+                icon: "hub",
+                tags: ["LangChain", "RAG", "Redis", "Multi-Agent"]
               },
               {
-                title: "Carve-out 및 시스템 통합",
-                desc: "양사 분리 및 흡수 합병 과정에서의 대규모 레거시 ERP/데이터 마이그레이션 전략 구성 및 무결점 오픈 달성.",
-                icon: "database",
-                tags: ["Oracle", "SQL", "Data Migration"]
+                title: "헬스케어 AI 챗봇",
+                desc: "환자의 병원 이용 편의를 높이기 위해 자연어 질의와 멀티턴 대화를 지원하는 의료 AI 챗봇.",
+                icon: "health_and_safety",
+                tags: ["LangChain", "LangGraph", "LLM", "AI Chatbot"]
               }
             ].map((project, idx) => (
               <div key={idx} className="group flex flex-col rounded-xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/50 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.25)] dark:border-slate-700 dark:bg-slate-800/50">
