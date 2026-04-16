@@ -42,7 +42,7 @@ export default function Projects() {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                    <a href="https://engineer-render-boom-fundamental.trycloudflare.com/" target="_blank" rel="noopener noreferrer" className="group relative flex flex-col overflow-hidden rounded-xl border border-emerald-200/80 bg-white shadow-[0_16px_40px_-18px_rgba(16,185,129,0.45)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(16,185,129,0.45)] dark:border-emerald-900/60 dark:bg-slate-900">
+                    <a href="https://author-delete-lecture-pointed.trycloudflare.com/" target="_blank" rel="noopener noreferrer" className="group relative flex flex-col overflow-hidden rounded-xl border border-emerald-200/80 bg-white shadow-[0_16px_40px_-18px_rgba(16,185,129,0.45)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(16,185,129,0.45)] dark:border-emerald-900/60 dark:bg-slate-900">
                         <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50/80 to-white dark:from-slate-800 dark:via-slate-900 dark:to-slate-900 relative">
                             <div className="absolute left-4 top-4 z-10 inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-700 shadow-sm backdrop-blur dark:border-emerald-800 dark:bg-slate-900/90 dark:text-emerald-300">
                                 <span className="material-symbols-outlined text-[12px]">auto_awesome</span>
